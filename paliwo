@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
+    <title>Paliwo</title>
+    <style>
 
-.spucha{text-align: center;margin-top: 1cm;}
-.o{margin-left: 10mm;}
-body {
- 
-  color: rgb(255, 255, 255);
+        .spucha{text-align: center;margin-top: 1cm;}
+        .o{margin-left: 10mm;}
+        .p{margin-left: 15mm;}
+        .nermin{background-image: url("paliwo.jpg");}
+        body {
+         
+          color: rgb(224, 213, 213);
+        }
+        h1{font-size: 72px;}
+        .center {
+  padding: 70px 0;
+
+  text-align: center;
 }
-h1{font-size: 72px;}
+.fontfam {
+  font-family: "Comic Sans MS";letter-spacing: 5px;
+}
+        </style>
+</head>
 
-</style>
-<body class ="spucha" style="background-color:rgb(112, 94, 103);">
+<body class ="spucha nermin center">
     
-    <h1 >Paliwo</h1>
+    <h1 class="fontfam">Paliwo</h1>
     <div>
     <label class="spucha"><input  type="radio" name="chuj" id="ropa" value="0"> Ropa</label><br>
 </div>
@@ -31,20 +41,26 @@ h1{font-size: 72px;}
     <p class="o"><input type="text" id="Litry">  Litry</p>
     <button type="button" onclick="getValueInput()"> Licz ! </button>
 
-    <p id="valueInput">i</p>
+    <p id="valueInput"></p>
 
 <hr>
 
+<p class="o"><input type="text" id="CenaRopy" placeholder="Ropa"> Ropa </p>
+<p class="p"><input type="text" id="CenaBenzo" placeholder="Benzyna"> Benzyna </p>
+<button type="button" onclick="getValueInputInne()"> Licz ! </button>
+<p id="valueInput2"></p>
+<p id="valueInput3"></p>
 
 
 
 
-
-</body>
 
 
 
 <script> 
+
+
+
 
 function getValueInput(){
 
@@ -64,44 +80,47 @@ function getValueInput(){
     }
 
 
-/*
+
     function getValueInputInne(){
 
 
-        let innaCena = document.getElementById("inne").value; 
-let iLitry = document.getElementById("Litry").value; 
+        let innaCenaRopa = document.getElementById("CenaRopy").value; 
+        let innaCenaBenzo = document.getElementById("CenaBenzo").value; 
+        //localStorage.setItem('Ropa', innaCenaRopa);
 
-  let Cena = iLitry*InnaCena;
+let pLitry = document.getElementById("Litry").value; 
 
-  document.getElementById("valueInput").innerHTML = Cena + "zł";
+  let Cena = pLitry*innaCenaRopa;
+  let Cena2 = pLitry*innaCenaBenzo;
+  document.getElementById("valueInput2").innerHTML = Cena + "zł Ropa";
+  document.getElementById("valueInput3").innerHTML = Cena2 + "zł Benzyna";
 
-
-
+ // localStorage.getItem('Ropa', innaCenaRopa);
 }
 
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>   
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
