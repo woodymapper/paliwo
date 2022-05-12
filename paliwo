@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.spucha{text-align: center;margin-top: 1cm;}
+.o{margin-left: 10mm;}
+body {
+ 
+  color: rgb(255, 255, 255);
+}
+h1{font-size: 72px;}
+
+</style>
+<body class ="spucha" style="background-color:rgb(112, 94, 103);">
+    
+    <h1 >Paliwo</h1>
+    <div>
+    <label class="spucha"><input  type="radio" name="chuj" id="ropa" value="0"> Ropa</label><br>
+</div>
+    <div>
+    <label class="spucha"><input  type="radio" name="chuj"  id="Benzyna"  value="0"> Benzyna</label><br>
+
+</div>
+    <hr>
+    <p class="o"><input type="text" id="Litry">  Litry</p>
+    <button type="button" onclick="getValueInput()"> Licz ! </button>
+
+    <p id="valueInput">i</p>
+
+<hr>
+
+
+
+
+
+
+</body>
+
+
+
+<script> 
+
+function getValueInput(){
+
+
+      let iLitry = document.getElementById("Litry").value; 
+ 
+      let n = document.getElementById("ropa").checked;
+      let a  = document.getElementById("Benzyna").checked;
+        
+      if(n == true){let Cena = iLitry*7.5;
+        document.getElementById("valueInput").innerHTML = Cena + "zł";}
+        if(a == true){let Cena = iLitry*6.7;
+        document.getElementById("valueInput").innerHTML = Cena + "zł";}
+     
+     
+  
+    }
+
+
+/*
+    function getValueInputInne(){
+
+
+        let innaCena = document.getElementById("inne").value; 
+let iLitry = document.getElementById("Litry").value; 
+
+  let Cena = iLitry*InnaCena;
+
+  document.getElementById("valueInput").innerHTML = Cena + "zł";
+
+
+
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>   
+</html>
